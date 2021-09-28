@@ -9,17 +9,18 @@ function cubo(x, y, z, color, material, alambrado){
      case 'Lambert': cubeMaterial = new THREE.MeshLambertMaterial({color: color, wireframe: alambrado});
       break;
 
+     case 'Standard': cubeMaterial = new THREE.MeshStandardMaterial({color: color, wireframe: alambrado});
+      break;
+
+     case 'Phong': cubeMaterial = new THREE.MeshPhongMaterial({color: color, wireframe: alambrado});
+      break;
+
      case 'Physical': cubeMaterial = new THREE.MeshPhysicalMaterial({color: color, wireframe: alambrado});
       break;
 
      case 'Basic': cubeMaterial = new THREE.MeshBasicMaterial({color: color, wireframe: alambrado});
       break;
 
-     case 'Standard': cubeMaterial = new THREE.MeshStandardMaterial({color: color, wireframe: alambrado});
-      break;
-
-     case 'Phong': cubeMaterial = new THREE.MeshPhongMaterial({color: color, wireframe: alambrado});
-      break;
 
     }
     
@@ -44,10 +45,10 @@ function init()
 
     Cubo = []; 
     Cubo.push(cubo(4, 4, 4, 0xFF0000, 'Lambert', false));
-    Cubo.push(cubo(4, 4, 4, 0x00FFFF, 'Physical', false));
-    Cubo.push(cubo(4, 4, 4, 0xFFFFFF, 'Basic', false));
-    Cubo.push(cubo(4, 4, 4, 0xFF00FF, 'Standard', false));
-    Cubo.push(cubo(4, 4, 4, 0xFF0000, 'Phong', false));
+    Cubo.push(cubo(4, 4, 4, 0x00FFFF, 'Standard', false));
+    Cubo.push(cubo(4, 4, 4, 0xFFFFFF, 'Phong', false));
+    Cubo.push(cubo(4, 4, 4, 0xFF00FF, 'Physical', false));
+    Cubo.push(cubo(4, 4, 4, 0xFF0000, 'Basic', false));
 
     Cubo[0].position.set(0, 2, 0);
     Cubo[1].position.set(0, 6, 0);
